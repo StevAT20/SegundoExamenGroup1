@@ -9,7 +9,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class ClienteService
+    public interface IClienteService
+    {
+        Task<DBEntity> Create(ClienteEntity entity);
+        Task<DBEntity> Delete(ClienteEntity entity);
+        Task<IEnumerable<ClienteEntity>> Get();
+        Task<ClienteEntity> GetByID(ClienteEntity entity);
+        Task<DBEntity> Update(ClienteEntity entity);
+    }
+
+    public class ClienteService : IClienteService
     {
         private readonly IDataAccess sql;
 
@@ -85,7 +94,7 @@ namespace WBL
             try
             {
                 var result = sql.ExecuteAsync("dbo.ClienteActualizar", new
-                { 
+                {
                     entity.IdCliente,
                     entity.Identificacion,
                     entity.IdTipoIdentificacion,
