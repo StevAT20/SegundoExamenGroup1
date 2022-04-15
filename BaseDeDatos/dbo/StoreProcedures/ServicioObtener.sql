@@ -5,12 +5,12 @@ Begin
 	SET NOCOUNT ON
 
 	SELECT
-		IdServicio,
-		NombreServicio,
-		PlazoEntrega,
-		CostoServicio,
-		Estado,
-		CuentaContable
+		 IdServicio
+		,NombreServicio
+		,PlazoEntrega
+		,CostoServicio
+		,Estado
+		,CuentaContable
 
 	FROM dbo.Servicio
 	WHERE (@IdServicio IS NULL OR IdServicio=@IdServicio)
