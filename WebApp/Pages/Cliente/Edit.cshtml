@@ -11,10 +11,6 @@
         <div class="card-body">
             <form id="FormEdit" method="post">
                 <input type="hidden" asp-for="Entity.IdCliente"/>
-                @*<div class="form-group mb-3">
-                    <label for="Entity.IdCliente" class="form-label">IdCliente</label>
-                    <input type="number" class="form-control" asp-for="Entity.IdCliente" v-model="Entity.IdCliente" maxlength="128" required>
-                </div>*@
                 <div class="form-group mb-3">
                     <label for="Entity.Identificacion" class="form-label">Identificacion</label>
                     <input type="text" class="form-control" asp-for="Entity.Identificacion" v-model="Entity.Identificacion" maxlength="128" required>
@@ -37,7 +33,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.FechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" asp-for="Entity.FechaNacimiento" v-model="Entity.FechaNacimiento" maxlength="250" required>
+                    <input type="datetime-local" class="form-control" asp-for="Entity.FechaNacimiento" v-model="Entity.FechaNacimiento" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.Identificacion" class="form-label">Nacionalidad</label>
@@ -45,7 +41,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.Nombre" class="form-label">Fecha de defuncion</label>
-                    <input type="date" class="form-control" asp-for="Entity.FechaDefuncion" v-model="Entity.FechaDefuncion" maxlength="250" required>
+                    <input type="datetime-local" class="form-control" asp-for="Entity.FechaDefuncion" v-model="Entity.FechaDefuncion" maxlength="250" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.PrimerApellido" class="form-label">Genero</label>
