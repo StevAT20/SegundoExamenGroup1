@@ -1,5 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[ClienteInsertar]
-	@IdCliente INT,
 	@Identificacion VARCHAR (128),
 	@IdTipoIdentificacion INT,
 	@Nombre VARCHAR (128),
@@ -24,7 +23,6 @@ SET NOCOUNT ON
 
 	INSERT INTO dbo.Cliente
 	(
-		IdCliente,
 		Identificacion,
 		IdTipoIdentificacion,
 		Nombre,
@@ -42,7 +40,6 @@ SET NOCOUNT ON
 	)
 	VALUES
 	(
-		@IdCliente,
 		@Identificacion,
 		@IdTipoIdentificacion,
 		@Nombre,
