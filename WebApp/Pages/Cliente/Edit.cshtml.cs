@@ -23,6 +23,7 @@ namespace WebApp.Pages.Cliente
         public int? id { get; set; }
 
         [BindProperty]
+        [FromBody]
         public ClienteEntity Entity { get; set; } = new ClienteEntity();
 
         public async Task<IActionResult> OnGet()
@@ -49,8 +50,8 @@ namespace WebApp.Pages.Cliente
             try
             {
                 var result = new DBEntity();
-                if (Entity.IdCliente.HasValue)
                 //Actualización
+                if (Entity.IdCliente.HasValue)
                 {
                     result = await clienteService.Update(Entity);
                 }
