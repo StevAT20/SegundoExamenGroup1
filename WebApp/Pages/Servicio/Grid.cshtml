@@ -1,0 +1,59 @@
+﻿@page
+@model WebApp.Pages.Servicio.GridModel
+@{
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Servicio
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Servicio</h5>
+            <a class="btn btn-secondary" asp-page="Edit"><i class='bx bxs-add-to-queue'></i></a>
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-hover table table-striped table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Servicio</th>
+                                <th>PlazoEntrega</th>
+                                <th>CostoServicio</th>
+                                <th>Estado</th>
+                                <th>CuentaContable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.IdServicio</td>
+                                    <td>@item.NombreServicio</td>
+                                    <td>@item.PlazoEntrega</td>
+                                    <td>@item.CostoServicio</td>
+                                    <td>@item.Estado</td>
+                                    <td>@item.CuentaContable</td>
+                                    <td>
+                                        <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdServicio"><i class='bx bxs-edit-alt'></i></a>
+                                        <button type="button" class="btn btn-secondary" onclick="ServicioGrid.OnClickEliminar(@item.IdServicio)"><i class='bx bxs-trash-alt'></i></button>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        var MensajeApp = "@Html.Raw(Model.Mensaje)";
+    </script>
+
+    <script defer src="~/App/Servicio/Grid.js"></script>
+
+}
