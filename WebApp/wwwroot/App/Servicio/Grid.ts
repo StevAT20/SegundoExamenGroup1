@@ -9,7 +9,7 @@
 
     export function OnClickEliminar(id) {
 
-        ComfirmAlert("Desea eliminar el registro eliminado?", "Eliminar", "warning", '#3085d6', '#d33')
+        ComfirmAlert("Desea eliminar el registro seleccionado?", "Eliminar", "warning", '#3085d6', '#d33')
             .then(result => {
                 if (result.isConfirmed) {
                     window.location.href = "Servicio/Grid?handler=Eliminar&id=" + id;
