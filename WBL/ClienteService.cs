@@ -14,8 +14,10 @@ namespace WBL
         Task<DBEntity> Create(ClienteEntity entity);
         Task<DBEntity> Delete(ClienteEntity entity);
         Task<IEnumerable<ClienteEntity>> Get();
+        Task<IEnumerable<ClienteEntity>> GetLista();
         Task<ClienteEntity> GetByID(ClienteEntity entity);
         Task<DBEntity> Update(ClienteEntity entity);
+
     }
 
     public class ClienteService : IClienteService
@@ -134,6 +136,24 @@ namespace WBL
             }
         }
 
+        #endregion
+
+        #region Listar
+
+        public async Task<IEnumerable<ClienteEntity>> GetLista()
+        {
+            try
+            {
+                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteLista");
+                return await result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
         #endregion
     }
 }

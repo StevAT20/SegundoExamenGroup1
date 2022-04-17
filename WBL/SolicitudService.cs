@@ -9,7 +9,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class SolicitudService
+    public interface ISolicitudService
+    {
+        Task<DBEntity> Create(SolicitudEntity entity);
+        Task<DBEntity> Delete(SolicitudEntity entity);
+        Task<IEnumerable<SolicitudEntity>> Get();
+        Task<SolicitudEntity> GetById(SolicitudEntity entity);
+        Task<DBEntity> Update(SolicitudEntity entity);
+    }
+
+    public class SolicitudService : ISolicitudService
     {
         private readonly IDataAccess sql;
 

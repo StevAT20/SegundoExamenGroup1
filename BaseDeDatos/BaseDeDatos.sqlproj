@@ -77,5 +77,6 @@
     <Build Include="dbo\StoreProcedures\SolicitudEliminar.sql" />
     <Build Include="dbo\StoreProcedures\SolicitudObtener.sql" />
     <Build Include="dbo\StoreProcedures\ClienteListar.sql" />
+    <Build Include="dbo\StoreProcedures\ListarServicio.sql" />
   </ItemGroup>
 </Project>
