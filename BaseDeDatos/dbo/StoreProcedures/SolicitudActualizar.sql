@@ -15,7 +15,7 @@ SET NOCOUNT ON
     
 	BEGIN TRY
 
-	 UPDATE dbo.Solicitud SET
+	 UPDATE dbo.Solicitud SET 
 		 IdCliente= @IdCliente
 		,IdServicio= @IdServicio
 		,Cantidad= @Cantidad

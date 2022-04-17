@@ -14,7 +14,7 @@ SET NOCOUNT ON
     
 	BEGIN TRY
 
-	 INSERT INTO dbo.Solicitud
+	 INSERT INTO dbo.Solicitud 
 	 (  IdCliente
 	   ,IdServicio
 	   ,Cantidad

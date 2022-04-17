@@ -14,6 +14,6 @@ BEGIN
   FROM 
        dbo.Solicitud
   WHERE
-      (@IdSolicitud IS NULL OR IdSolicitud=@IdSolicitud)
+      (@IdSolicitud IS NULL OR IdSolicitud=@IdSolicitud) 
 
 END
