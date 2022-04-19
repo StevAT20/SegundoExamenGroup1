@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace Entity.dbo
 {
-    public class ClienteEntity
+    public class ClienteEntity : DBEntity
     {
+        public ClienteEntity()
+        {
+            N_Nacionalidad = N_Nacionalidad ?? new NacionalidadEntity();
+        }
+
         public int? IdCliente { get; set; }
+        public int? IdNacionalidad { get; set; }
+        public virtual NacionalidadEntity N_Nacionalidad { get; set; }
         public string Identificacion { get; set; }
         public int? IdTipoIdentificacion { get; set; }
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public int? Nacionalidad { get; set; }
-        public DateTime FechaDefuncion { get; set; }
+        public DateTime FechaNacimiento { get; set; } = DateTime.Now;        
+        public DateTime FechaDefuncion { get; set; } = DateTime.Now;
         public char Genero { get; set; }
         public string NombreApellidosPadre { get; set; }
         public string NombreApellidosMadre { get; set; }

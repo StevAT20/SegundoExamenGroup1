@@ -2,22 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity;
+using Entity.dbo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Entity;
 using WBL;
-using Entity.dbo;
 
-namespace WebApp.Pages.Cliente
+namespace WebApp.Pages.Nacionalidad
 {
     public class EditModel : PageModel
     {
-        private readonly IClienteService clienteService;
         private readonly INacionalidadService nacionalidadService;
 
-        public EditModel(IClienteService clienteService, INacionalidadService nacionalidadService)
+        public EditModel(INacionalidadService nacionalidadService)
         {
-            this.clienteService = clienteService;
             this.nacionalidadService = nacionalidadService;
         }
 
@@ -26,9 +24,7 @@ namespace WebApp.Pages.Cliente
 
         [BindProperty]
         [FromBody]
-        public ClienteEntity Entity { get; set; } = new ClienteEntity();
-
-        public IEnumerable<NacionalidadEntity> NacionalidadLista { get; set; } = new List<NacionalidadEntity>();
+        public NacionalidadEntity Entity { get; set; } = new NacionalidadEntity();
 
         public async Task<IActionResult> OnGet()
         {
@@ -36,14 +32,11 @@ namespace WebApp.Pages.Cliente
             {
                 if (id.HasValue)
                 {
-                    Entity = await clienteService.GetByID(new()
+                    Entity = await nacionalidadService.GetByID(new()
                     {
-                        IdCliente = id
+                        IdNacionalidad = id
                     });
                 }
-
-                NacionalidadLista = await nacionalidadService.GetLista();
-
                 return Page();
             }
             catch (Exception ex)
@@ -58,14 +51,14 @@ namespace WebApp.Pages.Cliente
             {
                 var result = new DBEntity();
                 //Actualización
-                if (Entity.IdCliente.HasValue)
+                if (Entity.IdNacionalidad.HasValue)
                 {
-                    result = await clienteService.Update(Entity);
+                    result = await nacionalidadService.Update(Entity);
                 }
                 else
                 //Metodo insertar
                 {
-                    result = await clienteService.Create(Entity);
+                    result = await nacionalidadService.Create(Entity);
                 }
                 return new JsonResult(result);
             }
@@ -78,6 +71,5 @@ namespace WebApp.Pages.Cliente
                 });
             }
         }
-
     }
 }

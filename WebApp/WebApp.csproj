@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\App\Nacionalidad\Edit.ts" />
+    <Content Remove="wwwroot\App\Nacionalidad\Grid.ts" />
     <Content Remove="wwwroot\App\Servicio\Edit.ts" />
     <Content Remove="wwwroot\App\Servicio\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
@@ -74,6 +76,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\App\Nacionalidad\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Nacionalidad\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Servicio\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Servicio\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />

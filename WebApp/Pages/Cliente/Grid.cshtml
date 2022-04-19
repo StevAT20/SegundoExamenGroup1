@@ -26,7 +26,6 @@
                                     <td>PrimerApellido</td>
                                     <td>SegundoApellido</td>
                                     <td>Fecha Nacimiento</td>
-                                    <td>Nacionalidad</td>
                                     <td>FechaDefuncion</td>
                                     <td>Genero</td>
                                     <td>NombreApellidosPadre</td>
@@ -34,35 +33,36 @@
                                     <td>Pasaporte</td>
                                     <td>CuentaIBAN</td>
                                     <td>CorreoNotifica</td>
+                                    <td>Nacionalidad</td>
                                     <td>Acción</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.GridList)
                                 {
-                                    <tr>
-                                        <td>@item.IdCliente</td>
-                                        <td>@item.Identificacion</td>
-                                        <td>@item.IdTipoIdentificacion</td>
-                                        <td>@item.Nombre</td>
-                                        <td>@item.PrimerApellido</td>
-                                        <td>@item.SegundoApellido</td>
-                                        <td>@item.FechaNacimiento</td>
-                                        <td>@item.Nacionalidad</td>
-                                        <td>@item.FechaDefuncion</td>
-                                        <td>@item.Genero</td>
-                                        <td>@item.NombreApellidosPadre</td>
-                                        <td>@item.NombreApellidosMadre</td>
-                                        <td>@item.Pasaporte</td>
-                                        <td>@item.CuentaIBAN</td>
-                                        <td>@item.CorreoNotifica</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <a class="btn btn-secondary me-3" asp-page="Edit" asp-route-id="@item.IdCliente"><i class='bx bx-edit'></i></a>
-                                                <button type="button" class="btn btn-secondary" onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)"><i class='bx bx-trash'></i></button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>@item.IdCliente</td>
+                                    <td>@item.Identificacion</td>
+                                    <td>@item.IdTipoIdentificacion</td>
+                                    <td>@item.Nombre</td>
+                                    <td>@item.PrimerApellido</td>
+                                    <td>@item.SegundoApellido</td>
+                                    <td>@item.FechaNacimiento</td>
+                                    <td>@item.FechaDefuncion</td>
+                                    <td>@item.Genero</td>
+                                    <td>@item.NombreApellidosPadre</td>
+                                    <td>@item.NombreApellidosMadre</td>
+                                    <td>@item.Pasaporte</td>
+                                    <td>@item.CuentaIBAN</td>
+                                    <td>@item.CorreoNotifica</td>
+                                    <td>@item.N_Nacionalidad.Nombre</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a class="btn btn-secondary me-3" asp-page="Edit" asp-route-id="@item.IdCliente"><i class='bx bx-edit'></i></a>
+                                            <button type="button" class="btn btn-secondary" onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)"><i class='bx bx-trash'></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>
@@ -71,6 +71,7 @@
             </div>
         </div>
     </div>
+    .
 </div>
 
 @section Scripts{

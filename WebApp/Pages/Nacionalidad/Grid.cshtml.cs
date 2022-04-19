@@ -2,30 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity;
+using Entity.dbo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Entity;
 using WBL;
-using Entity.dbo;
 
-namespace WebApp.Pages.Cliente
+namespace WebApp.Pages.Nacionalidad
 {
     public class GridModel : PageModel
     {
-        private readonly IClienteService clienteService;
+        private readonly INacionalidadService nacionalidadService;
 
-        public GridModel(IClienteService clienteService)
+        public GridModel(INacionalidadService nacionalidadService)
         {
-            this.clienteService = clienteService;
+            this.nacionalidadService = nacionalidadService;
         }
-         
-        public IEnumerable<ClienteEntity> GridList { get; set; } = new List<ClienteEntity>();
+
+        public IEnumerable<NacionalidadEntity> GridList { get; set; } = new List<NacionalidadEntity>();
 
         public async Task<IActionResult> OnGet()
         {
             try
             {
-                GridList = await clienteService.Get();
+                GridList = await nacionalidadService.Get();
 
                 return Page();
             }
@@ -39,9 +39,9 @@ namespace WebApp.Pages.Cliente
         {
             try
             {
-                var result = await clienteService.Delete(new()
+                var result = await nacionalidadService.Delete(new()
                 {
-                    IdCliente = Id
+                    IdNacionalidad = Id
                 }); ;
 
                 return new JsonResult(result);
@@ -55,6 +55,5 @@ namespace WebApp.Pages.Cliente
                 });
             }
         }
-
     }
 }
