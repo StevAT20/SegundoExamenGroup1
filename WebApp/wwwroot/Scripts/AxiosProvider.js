@@ -19,6 +19,14 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.TipoClienteEliminar = function (id) { return axios.delete("TipoCliente/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.TipoClienteGuardar = function (entity) { return axios.post("TipoCliente/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

@@ -2,8 +2,8 @@
 (
 	IdCliente INT NOT NULL IDENTITY(1,1) CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED (IdCliente ASC),
 	IdNacionalidad INT NULL CONSTRAINT [FK_Nacionalidad_Cliente] FOREIGN KEY (IdNacionalidad) REFERENCES dbo.Nacionalidad (IdNacionalidad),
-	Identificacion VARCHAR (128) NULL,
-	IdTipoIdentificacion INT NULL,
+	IdTipoIdentificacion INT NULL CONSTRAINT [FK_TipoCliente_Cliente] FOREIGN KEY (IdTipoIdentificacion) REFERENCES dbo.TipoCliente (IdTipoCliente),
+	Identificacion VARCHAR (128) NULL,	
 	Nombre VARCHAR (128) NULL,
 	PrimerApellido VARCHAR (128) NULL,
 	SegundoApellido VARCHAR (128) NULL,

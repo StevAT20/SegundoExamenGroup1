@@ -11,6 +11,7 @@ namespace Entity.dbo
         public ClienteEntity()
         {
             N_Nacionalidad = N_Nacionalidad ?? new NacionalidadEntity();
+            TipoClienteNombre = TipoClienteNombre ?? new TipoClienteEntity();
         }
 
         public int? IdCliente { get; set; }
@@ -18,6 +19,7 @@ namespace Entity.dbo
         public virtual NacionalidadEntity N_Nacionalidad { get; set; }
         public string Identificacion { get; set; }
         public int? IdTipoIdentificacion { get; set; }
+        public virtual TipoClienteEntity TipoClienteNombre { get; set; }
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }

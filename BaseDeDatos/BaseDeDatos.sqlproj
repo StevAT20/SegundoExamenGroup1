@@ -78,5 +78,11 @@
     <Build Include="dbo\StoreProcedures\NacionalidadEliminar.sql" />
     <Build Include="dbo\StoreProcedures\NacionalidadObtener.sql" />
     <Build Include="dbo\StoreProcedures\NacionalidadLista.sql" />
+    <Build Include="dbo\Tables\TipoCliente.sql" />
+    <Build Include="dbo\StoreProcedures\TipoClienteInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\TipoClienteActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\TipoClienteEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\TipoClienteObtener.sql" />
+    <Build Include="dbo\StoreProcedures\TipoClienteLista.sql" />
   </ItemGroup>
 </Project>

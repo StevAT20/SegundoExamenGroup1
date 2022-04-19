@@ -20,9 +20,12 @@ Begin
 		C.CuentaIBAN,
 		C.CorreoNotifica,
 		N.IdNacionalidad,
-		N.Nombre
+		N.Nombre,
+		T.IdTipoCliente,
+		T.Nombre
 	FROM dbo.Cliente C
 	    INNER JOIN dbo.Nacionalidad N
-		 ON C.IdNacionalidad = N.IdNacionalidad
+			ON C.IdNacionalidad = N.IdNacionalidad INNER JOIN dbo.TipoCliente T 
+			ON C.IdTipoIdentificacion = T.IdTipoCliente
 	WHERE (@IdCliente IS NULL OR IdCliente=@IdCliente)
 End
