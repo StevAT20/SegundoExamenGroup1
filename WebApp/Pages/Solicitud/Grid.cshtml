@@ -31,22 +31,22 @@
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                                <tr>
-                                    <td>@item.IdSolicitud</td>
-                                    <td>@item.Cliente.Nombre</td>
-                                    <td>@item.Servicio.NombreServicio</td>
-                                    <td>@item.Cantidad</td>
-                                    <td>@item.Monto</td>
-                                    <td>@item.FechaEntrega</td>
-                                    <td>@item.UsuarioEntrega</td>
-                                    <td>@item.Observaciones</td>
+                            <tr>
+                                <td>@item.IdSolicitud</td>
+                                <td>@item.Cliente.Nombre</td>
+                                <td>@item.Servicio.NombreServicio</td>
+                                <td>@item.Cantidad</td>
+                                <td>@item.Monto</td>
+                                <td>@item.FechaEntrega</td>
+                                <td>@item.UsuarioEntrega</td>
+                                <td>@item.Observaciones</td>
 
 
-                                    <td>
-                                        <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdSolicitud"><i class='bx bx-edit'></i></a>
-                                        <button type="button" class="btn btn-secondary" onclick="SolicitudGrid.OnClickEliminar(@item.IdSolicitud)"><i class='bx bx-trash'></i></button>
-                                    </td>
-                                </tr>
+                                <td>
+                                    <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdSolicitud"><i class='bx bx-edit'></i></a>
+                                    <button type="button" class="btn btn-secondary" onclick="SolicitudGrid.OnClickEliminar(@item.IdSolicitud)"><i class='bx bx-trash'></i></button>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

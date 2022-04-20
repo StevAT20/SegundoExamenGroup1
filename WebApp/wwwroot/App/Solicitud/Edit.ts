@@ -23,7 +23,7 @@
                             if (data.CodeError == 0) {
 
                                 Toast.fire({ title: "El registro se inserto correctamente", icon: "success" })
-                                    .then(() => window.location.href = "Contacto/Grid");
+                                    .then(() => window.location.href = "Solicitud/Grid");
 
                             } else {
                                 Toast.fire({ title: data.MsgError, icon: "error" });

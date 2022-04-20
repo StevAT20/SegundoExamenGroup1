@@ -1,4 +1,5 @@
-﻿namespace SolicitudGrid {
+﻿
+namespace SolicitudGrid {
 
 
     export function OnClickEliminar(id) {

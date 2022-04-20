@@ -31,7 +31,7 @@ namespace WebApp.Pages.Solicitud
 
         public IEnumerable<ClienteEntity> ClienteLista { get; set; } = new List<ClienteEntity>();
         public IEnumerable<ServicioEntity> ServicioLista { get; set; } = new List<ServicioEntity>();
-        public async Task<IActionResult> OnGetCliente()
+        public async Task<IActionResult> OnGet()
         {
             try
             {
