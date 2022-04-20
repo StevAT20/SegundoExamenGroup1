@@ -1,5 +1,5 @@
 ﻿using BD;
-using Entity.dbo;
+using Entity;
 using Entity;
 using System;
 using System.Collections.Generic;

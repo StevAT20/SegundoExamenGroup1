@@ -1,6 +1,5 @@
 ﻿using BD;
 using Entity;
-using Entity.dbo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +32,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<SolicitudEntity, ClienteEntity, ServicioEntity>("dbo.SolicitudObtener", "IdCliente", "IdServicio");
+                var result = sql.QueryAsync<SolicitudEntity, ClienteEntity, ServicioEntity>("dbo.SolicitudObtener", "IdSolicitud,IdCliente", "IdSolicitud,IdServicio");
                 return await result;
             }
             catch (Exception)
