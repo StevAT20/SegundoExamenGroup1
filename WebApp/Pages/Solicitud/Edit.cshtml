@@ -21,7 +21,7 @@
                 <div class="form-group mb-3">
                     <label for="Entity.IdServicio" class="form-label">Servicio</label>
                     <select class="form-select" asp-for="Entity.IdServicio" v-model="Entity.IdServicio"
- p                            asp-items="@(new SelectList(Model.ClienteLista, "IdServicio", "NombreServicio"))" required>
+                            p asp-items="@(new SelectList(Model.ServicioLista, "IdServicio", "NombreServicio"))" required>
                     </select>
                 </div>
 
@@ -37,7 +37,7 @@
 
                 <div class="form-group mb-3">
                     <label for="Entity.FechaEntrega" class="form-label">Fecha de Entrega</label>
-                    <input type="text" class="form-control" asp-for="Entity.FechaEntrega" v-model="Entity.FechaEntrega" maxlength="250" required>
+                    <input type="date" class="form-control" asp-for="Entity.FechaEntrega" v-model="Entity.FechaEntrega" maxlength="250" required>
                 </div>
 
                 <div class="form-group mb-3">

@@ -17,8 +17,8 @@ namespace Entity
 
         public int? IdSolicitud { get; set; }
         public int? IdCliente { get; set; }
-        public int? IdServicio { get; set; }
         public virtual ClienteEntity Cliente { get; set; }
+        public int? IdServicio { get; set; }
         public virtual ServicioEntity Servicio { get; set; }
         public int? Cantidad { get; set; }
         public decimal Monto { get; set; }

@@ -138,10 +138,7 @@ namespace WBL
 
         }
 
-        public Task<IEnumerable<ServicioEntity>> GetListar()
-        {
-            throw new NotImplementedException();
-        }
+   
         #endregion
     }
 }

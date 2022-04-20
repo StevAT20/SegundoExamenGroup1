@@ -44,28 +44,6 @@ namespace WebApp.Pages.Solicitud
                 }
 
                 ClienteLista = await clienteService.GetLista();
-
-                return Page();
-
-            }
-            catch (Exception ex)
-            {
-
-                return Content(ex.Message);
-            }
-        }
-        public async Task<IActionResult> OnGetServicio()
-        {
-            try
-            {
-                if (id.HasValue)
-                {
-                    Entity = await solicitudService.GetById(new()
-                    {
-                        IdSolicitud = id
-                    });
-                }
-
                 ServicioLista = await servicioService.GetLista();
 
                 return Page();
