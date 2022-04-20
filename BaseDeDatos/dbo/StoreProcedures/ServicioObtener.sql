@@ -13,5 +13,7 @@ Begin
 		,CuentaContable
 
 	FROM dbo.Servicio
+
 	WHERE (@IdServicio IS NULL OR IdServicio=@IdServicio)
+
 End

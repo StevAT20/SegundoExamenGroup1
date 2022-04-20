@@ -84,5 +84,11 @@
     <Build Include="dbo\StoreProcedures\TipoClienteEliminar.sql" />
     <Build Include="dbo\StoreProcedures\TipoClienteObtener.sql" />
     <Build Include="dbo\StoreProcedures\TipoClienteLista.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudObtener.sql" />
+    <Build Include="dbo\StoreProcedures\ClienteListar.sql" />
+    <Build Include="dbo\StoreProcedures\ListarServicio.sql" />
   </ItemGroup>
 </Project>
