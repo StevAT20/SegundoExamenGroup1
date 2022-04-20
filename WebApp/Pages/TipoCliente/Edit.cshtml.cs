@@ -2,24 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity;
+using Entity.dbo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Entity;
 using WBL;
-using Entity.dbo;
 
-namespace WebApp.Pages.Cliente
+namespace WebApp.Pages.TipoCliente
 {
     public class EditModel : PageModel
     {
-        private readonly IClienteService clienteService;
-        private readonly INacionalidadService nacionalidadService;
         private readonly ITipoClienteService tipoClienteService;
 
-        public EditModel(IClienteService clienteService, INacionalidadService nacionalidadService, ITipoClienteService tipoClienteService)
+        public EditModel(ITipoClienteService tipoClienteService)
         {
-            this.clienteService = clienteService;
-            this.nacionalidadService = nacionalidadService;
             this.tipoClienteService = tipoClienteService;
         }
 
@@ -28,11 +24,7 @@ namespace WebApp.Pages.Cliente
 
         [BindProperty]
         [FromBody]
-        public ClienteEntity Entity { get; set; } = new ClienteEntity();
-
-        public IEnumerable<NacionalidadEntity> NacionalidadLista { get; set; } = new List<NacionalidadEntity>();
-
-        public IEnumerable<TipoClienteEntity> TipoClienteLista { get; set; } = new List<TipoClienteEntity>();
+        public TipoClienteEntity Entity { get; set; } = new TipoClienteEntity();
 
         public async Task<IActionResult> OnGet()
         {
@@ -40,16 +32,11 @@ namespace WebApp.Pages.Cliente
             {
                 if (id.HasValue)
                 {
-                    Entity = await clienteService.GetByID(new()
+                    Entity = await tipoClienteService.GetByID(new()
                     {
-                        IdCliente = id
+                        IdTipoCliente = id
                     });
                 }
-
-                NacionalidadLista = await nacionalidadService.GetLista();
-
-                TipoClienteLista = await tipoClienteService.GetLista();
-
                 return Page();
             }
             catch (Exception ex)
@@ -64,14 +51,14 @@ namespace WebApp.Pages.Cliente
             {
                 var result = new DBEntity();
                 //Actualización
-                if (Entity.IdCliente.HasValue)
+                if (Entity.IdTipoCliente.HasValue)
                 {
-                    result = await clienteService.Update(Entity);
+                    result = await tipoClienteService.Update(Entity);
                 }
                 else
                 //Metodo insertar
                 {
-                    result = await clienteService.Create(Entity);
+                    result = await tipoClienteService.Create(Entity);
                 }
                 return new JsonResult(result);
             }
@@ -84,6 +71,5 @@ namespace WebApp.Pages.Cliente
                 });
             }
         }
-
     }
 }

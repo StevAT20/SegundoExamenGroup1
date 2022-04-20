@@ -1,0 +1,36 @@
+﻿CREATE PROCEDURE [dbo].[NacionalidadInsertar]
+	@Nombre VARCHAR (128)
+	
+AS BEGIN
+
+SET NOCOUNT ON
+
+	BEGIN TRANSACTION TRASA
+
+	BEGIN TRY
+
+	INSERT INTO dbo.Nacionalidad
+	(
+		Nombre
+	)
+	VALUES
+	(
+		@Nombre
+	)
+
+	COMMIT TRANSACTION TRASA
+	SELECT 0 As CodeError, '' AS MsgError
+
+	END TRY
+
+	BEGIN CATCH
+
+		SELECT
+			ERROR_NUMBER() AS CodeError,
+			ERROR_MESSAGE() AS MsgError
+
+		ROLLBACK TRANSACTION TRASA
+
+	END CATCH
+
+END

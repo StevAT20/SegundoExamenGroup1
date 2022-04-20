@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[Cliente]
 (
 	IdCliente INT NOT NULL IDENTITY(1,1) CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED (IdCliente ASC),
-	Identificacion VARCHAR (128) NULL,
-	IdTipoIdentificacion INT NULL,
+	IdNacionalidad INT NULL CONSTRAINT [FK_Nacionalidad_Cliente] FOREIGN KEY (IdNacionalidad) REFERENCES dbo.Nacionalidad (IdNacionalidad),
+	IdTipoIdentificacion INT NULL CONSTRAINT [FK_TipoCliente_Cliente] FOREIGN KEY (IdTipoIdentificacion) REFERENCES dbo.TipoCliente (IdTipoCliente),
+	Identificacion VARCHAR (128) NULL,	
 	Nombre VARCHAR (128) NULL,
 	PrimerApellido VARCHAR (128) NULL,
 	SegundoApellido VARCHAR (128) NULL,
 	FechaNacimiento DATETIME NULL,
-	Nacionalidad INT NULL,
 	FechaDefuncion DATETIME NULL,
 	Genero CHAR (1) NULL,
 	NombreApellidosPadre VARCHAR (200) NULL,
