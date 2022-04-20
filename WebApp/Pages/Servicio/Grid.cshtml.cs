@@ -20,53 +20,38 @@ namespace WebApp.Pages.Servicio
 
         public IEnumerable<ServicioEntity> GridList { get; set; } = new List<ServicioEntity>();
 
-        public string Mensaje { get; set; } = "";
-
         public async Task<IActionResult> OnGet()
         {
             try
             {
                 GridList = await servicioService.Get();
 
-                if (TempData.ContainsKey("Msg"))
-                {
-                    Mensaje = TempData["Msg"] as string;
-                }
-                TempData.Clear();
-
                 return Page();
             }
             catch (Exception ex)
             {
-
                 return Content(ex.Message);
             }
         }
 
-        public async Task<IActionResult> OnGetEliminar(int id)
+        public async Task<JsonResult> OnDeleteEliminar(int Id)
         {
             try
             {
                 var result = await servicioService.Delete(new()
-                { 
-                    IdServicio = id
-                }          
-                );
-
-                if (result.CodeError != 0)
                 {
-                    throw new Exception(result.MsgError);
-                }
+                    IdServicio = Id
+                }); ;
 
-                TempData["Msg"] = "El registro se eliminó correctamente";
-
-
-                return Redirect("Grid");
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {
-
-                return Content(ex.Message);
+                return new JsonResult(new DBEntity
+                {
+                    CodeError = ex.HResult,
+                    MsgError = ex.Message
+                });
             }
         }
     }
