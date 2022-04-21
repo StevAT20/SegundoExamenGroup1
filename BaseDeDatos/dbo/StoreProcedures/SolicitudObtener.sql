@@ -7,14 +7,15 @@ BEGIN
   
   SELECT
          S.IdSolicitud
-		,C.IdCliente
-		,V.IdServicio
 		,S.Cantidad
 		,S.Monto
 		,S.FechaEntrega
 		,S.UsuarioEntrega
 		,S.Observaciones
-		
+		,C.IdCliente
+		,C.Nombre
+		,V.IdServicio
+		,V.NombreServicio
 
   FROM 
        dbo.Solicitud S
@@ -25,6 +26,6 @@ BEGIN
 		 ON S.IdServicio = V.IdServicio
 		 
   WHERE
-      (@IdSolicitud IS NULL OR @IdSolicitud=@IdSolicitud)
+      (@IdSolicitud IS NULL OR S.IdSolicitud=@IdSolicitud)
 
 END

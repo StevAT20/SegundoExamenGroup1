@@ -32,7 +32,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<SolicitudEntity, ClienteEntity, ServicioEntity> ("dbo.SolicitudObtener", "IdSolicitud,IdCliente,IdServicio");
+                var result = sql.QueryAsync<SolicitudEntity,ClienteEntity,ServicioEntity> ("dbo.SolicitudObtener", "IdSolicitud,IdCliente,IdServicio");
                 return await result;
             }
             catch (Exception)
@@ -91,6 +91,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("dbo.SolicitudActualizar", new
                 {
+                    entity.IdSolicitud,
                     entity.IdCliente,
                     entity.IdServicio,
                     entity.Cantidad,

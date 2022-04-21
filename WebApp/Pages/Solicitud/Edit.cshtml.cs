@@ -68,7 +68,7 @@ namespace WebApp.Pages.Solicitud
 
                 }
                 else
-                {   //Metodo de Inserción
+                {  
                     result = await solicitudService.Create(Entity);
 
                 }

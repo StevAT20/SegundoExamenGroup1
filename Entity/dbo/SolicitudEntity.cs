@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Entity
             Cliente = Cliente ?? new ClienteEntity();
             Servicio = Servicio ?? new ServicioEntity();
         }
-
+        
         public int? IdSolicitud { get; set; }
         public int? IdCliente { get; set; }
         public virtual ClienteEntity Cliente { get; set; }

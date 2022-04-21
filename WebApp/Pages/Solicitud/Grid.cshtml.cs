@@ -18,8 +18,8 @@ namespace WebApp.Pages.Solicitud
             this.solicitudService = solicitudService;
         }
 
-        public IEnumerable<SolicitudEntity> GridList { get; set; } = new List<SolicitudEntity>();
-
+        public IEnumerable<SolicitudEntity> GridList  = new List<SolicitudEntity>();
+        
         public async Task<IActionResult> OnGet()
         {
             try
@@ -38,9 +38,9 @@ namespace WebApp.Pages.Solicitud
         {
             try
             {
-                var result = await solicitudService.Delete(new()
+                var result = await solicitudService.Delete(new SolicitudEntity()
                 {
-                    IdServicio = id
+                    IdSolicitud = id
                 }
                 );
 
