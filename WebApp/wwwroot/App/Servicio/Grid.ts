@@ -1,5 +1,4 @@
-﻿import { data } from "jquery";
-
+﻿
 namespace ServicioGrid {
 
     export function OnClickEliminar(id) {
@@ -19,9 +18,9 @@ namespace ServicioGrid {
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" })
                         }
-                    });
+                    })
                 }
-            })
+            });
     }
 
     $("#GridView").DataTable();

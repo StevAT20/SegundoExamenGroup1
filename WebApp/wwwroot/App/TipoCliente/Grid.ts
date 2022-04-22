@@ -1,6 +1,4 @@
-﻿import { data } from "jquery";
-
-namespace TipoClienteGrid {
+﻿namespace TipoClienteGrid {
 
     export function OnClickEliminar(id) {
         ComfirmAlert("¿Desea eliminar el registro seleccionado?", "Eliminar", "warning", '#3085d6', '#d33')

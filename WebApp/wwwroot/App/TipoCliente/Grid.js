@@ -1,3 +1,4 @@
+"use strict";
 var TipoClienteGrid;
 (function (TipoClienteGrid) {
     function OnClickEliminar(id) {
@@ -22,5 +23,4 @@ var TipoClienteGrid;
     TipoClienteGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
 })(TipoClienteGrid || (TipoClienteGrid = {}));
-export {};
 //# sourceMappingURL=Grid.js.map

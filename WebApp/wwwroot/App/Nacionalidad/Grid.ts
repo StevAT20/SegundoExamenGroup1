@@ -1,5 +1,4 @@
-﻿import { data } from "jquery";
-
+﻿
 namespace NacionalidadGrid {
 
     export function OnClickEliminar(id) {
@@ -19,9 +18,9 @@ namespace NacionalidadGrid {
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" })
                         }
-                    });
+                    })
                 }
-            })
+            });
     }
 
     $("#GridView").DataTable();

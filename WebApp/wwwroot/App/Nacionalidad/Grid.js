@@ -1,3 +1,4 @@
+"use strict";
 var NacionalidadGrid;
 (function (NacionalidadGrid) {
     function OnClickEliminar(id) {
@@ -22,5 +23,4 @@ var NacionalidadGrid;
     NacionalidadGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
 })(NacionalidadGrid || (NacionalidadGrid = {}));
-export {};
 //# sourceMappingURL=Grid.js.map

@@ -39,10 +39,10 @@ namespace WebApp.Pages.Cliente
         {
             try
             {
-                var result = await clienteService.Delete(new()
+                var result = await clienteService.Delete(new ClienteEntity()
                 {
                     IdCliente = Id
-                }); ;
+                });
 
                 return new JsonResult(result);
             }

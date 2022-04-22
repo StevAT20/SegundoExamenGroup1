@@ -1,5 +1,4 @@
-﻿import { data } from "jquery";
-
+﻿
 namespace ClienteGrid {
 
     export function OnClickEliminar(id) {
@@ -12,16 +11,16 @@ namespace ClienteGrid {
 
                         Loading.close();
 
-                        if (data.CodeError==0) {
+                        if (data.CodeError == 0) {
                             Toast.fire({ title: "El registro se eliminó correctamente", icon: "success" }).then(() =>
                                 window.location.reload());
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" })
                         }
-                    });
+                    })
                 }
-            })
+            });
     }
 
     $("#GridView").DataTable();
