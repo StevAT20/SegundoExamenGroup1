@@ -13,10 +13,14 @@ namespace WebApp.Pages.Cliente
     public class EditModel : PageModel
     {
         private readonly IClienteService clienteService;
+        private readonly INacionalidadService nacionalidadService;
+        private readonly ITipoClienteService tipoClienteService;
 
-        public EditModel(IClienteService clienteService)
+        public EditModel(IClienteService clienteService, INacionalidadService nacionalidadService, ITipoClienteService tipoClienteService)
         {
             this.clienteService = clienteService;
+            this.nacionalidadService = nacionalidadService;
+            this.tipoClienteService = tipoClienteService;
         }
 
         [BindProperty(SupportsGet = true)]
@@ -25,6 +29,10 @@ namespace WebApp.Pages.Cliente
         [BindProperty]
         [FromBody]
         public ClienteEntity Entity { get; set; } = new ClienteEntity();
+
+        public IEnumerable<NacionalidadEntity> NacionalidadLista { get; set; } = new List<NacionalidadEntity>();
+
+        public IEnumerable<TipoClienteEntity> TipoClienteLista { get; set; } = new List<TipoClienteEntity>();
 
         public async Task<IActionResult> OnGet()
         {
@@ -37,6 +45,11 @@ namespace WebApp.Pages.Cliente
                         IdCliente = id
                     });
                 }
+
+                NacionalidadLista = await nacionalidadService.GetLista();
+
+                TipoClienteLista = await tipoClienteService.GetLista();
+
                 return Page();
             }
             catch (Exception ex)

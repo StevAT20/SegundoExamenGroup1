@@ -1,11 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[ClienteInsertar]
 	@Identificacion VARCHAR (128),
+	@IdNacionalidad INT,
 	@IdTipoIdentificacion INT,
 	@Nombre VARCHAR (128),
 	@PrimerApellido VARCHAR (128),
 	@SegundoApellido VARCHAR (128),
-	@FechaNacimiento DATETIME,
-	@Nacionalidad INT,
+	@FechaNacimiento DATETIME,	
 	@FechaDefuncion DATETIME,
 	@Genero CHAR (1),
 	@NombreApellidosPadre VARCHAR (200),
@@ -24,12 +24,12 @@ SET NOCOUNT ON
 	INSERT INTO dbo.Cliente
 	(
 		Identificacion,
+		IdNacionalidad,
 		IdTipoIdentificacion,
 		Nombre,
 		PrimerApellido,
 		SegundoApellido,
-		FechaNacimiento,
-		Nacionalidad,
+		FechaNacimiento,		
 		FechaDefuncion,
 		Genero,
 		NombreApellidosPadre,
@@ -41,12 +41,12 @@ SET NOCOUNT ON
 	VALUES
 	(
 		@Identificacion,
+		@IdNacionalidad,
 		@IdTipoIdentificacion,
 		@Nombre,
 		@PrimerApellido,
 		@SegundoApellido,
-		@FechaNacimiento,
-		@Nacionalidad,
+		@FechaNacimiento,		
 		@FechaDefuncion,
 		@Genero,
 		@NombreApellidosPadre,

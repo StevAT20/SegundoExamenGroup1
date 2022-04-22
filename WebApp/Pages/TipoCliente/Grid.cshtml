@@ -1,0 +1,50 @@
+﻿@page
+@model WebApp.Pages.TipoCliente.GridModel
+@{
+}
+
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Tipo de clientes
+        </div>
+        <div class="card-body">
+
+            <h5 class="card-title">Tipo de clientes</h5>
+
+            <a class="btn btn-secondary" asp-page="Edit"><i class="bx bxs-add-to-queue"></i></a>
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-striped table table-hover">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Nombre</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.IdTipoCliente</td>
+                                    <td>@item.Nombre</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a class="btn btn-secondary me-3" asp-page="Edit" asp-route-id="@item.IdTipoCliente"><i class='bx bx-edit'></i></a>
+                                            <button type="button" class="btn btn-secondary" onclick="NacionalidadGrid.OnClickEliminar(@item.IdTipoCliente)"><i class='bx bx-trash'></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script defer src="~/App/TipoCliente/Grid.js"></script>
+}

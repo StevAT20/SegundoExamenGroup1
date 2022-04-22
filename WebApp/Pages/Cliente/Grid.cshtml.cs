@@ -18,7 +18,7 @@ namespace WebApp.Pages.Cliente
         {
             this.clienteService = clienteService;
         }
-
+         
         public IEnumerable<ClienteEntity> GridList { get; set; } = new List<ClienteEntity>();
 
         public async Task<IActionResult> OnGet()

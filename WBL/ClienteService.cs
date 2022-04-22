@@ -35,7 +35,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteObtener");
+                var result = sql.QueryAsync<ClienteEntity, NacionalidadEntity, TipoClienteEntity>("dbo.ClienteObtener", "IdCliente,IdNacionalidad,IdTipoCliente");
                 return await result;
             }
             catch (Exception)
@@ -68,12 +68,12 @@ namespace WBL
                 var result = sql.ExecuteAsync("dbo.ClienteInsertar", new
                 {
                     entity.Identificacion,
+                    entity.IdNacionalidad,
                     entity.IdTipoIdentificacion,
                     entity.Nombre,
                     entity.PrimerApellido,
                     entity.SegundoApellido,
-                    entity.FechaNacimiento,
-                    entity.Nacionalidad,
+                    entity.FechaNacimiento,                    
                     entity.FechaDefuncion,
                     entity.Genero,
                     entity.NombreApellidosPadre,
@@ -98,13 +98,13 @@ namespace WBL
                 var result = sql.ExecuteAsync("dbo.ClienteActualizar", new
                 {
                     entity.IdCliente,
+                    entity.IdNacionalidad,
                     entity.Identificacion,
                     entity.IdTipoIdentificacion,
                     entity.Nombre,
                     entity.PrimerApellido,
                     entity.SegundoApellido,
-                    entity.FechaNacimiento,
-                    entity.Nacionalidad,
+                    entity.FechaNacimiento,                    
                     entity.FechaDefuncion,
                     entity.Genero,
                     entity.NombreApellidosPadre,

@@ -1,18 +1,26 @@
-"use strict";
 var ServicioGrid;
 (function (ServicioGrid) {
-    if (MensajeApp != "") {
-        Toast.fire({ icon: "success", title: MensajeApp });
-    }
     function OnClickEliminar(id) {
-        ComfirmAlert("Desea eliminar el registro seleccionado?", "Eliminar", "warning", '#3085d6', '#d33')
+        ComfirmAlert("¿Desea eliminar el registro seleccionado?", "Eliminar", "warning", '#3085d6', '#d33')
             .then(function (result) {
             if (result.isConfirmed) {
-                window.location.href = "Servicio/Grid?handler=Eliminar&id=" + id;
+                Loading.fire("Borrando");
+                App.AxiosProvider.ServicioEliminar(id).then(function (data) {
+                    Loading.close();
+                    if (data.CodeError == 0) {
+                        Toast.fire({ title: "El registro se eliminó correctamente", icon: "success" }).then(function () {
+                            return window.location.reload();
+                        });
+                    }
+                    else {
+                        Toast.fire({ title: data.MsgError, icon: "error" });
+                    }
+                });
             }
         });
     }
     ServicioGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
 })(ServicioGrid || (ServicioGrid = {}));
+export {};
 //# sourceMappingURL=Grid.js.map
