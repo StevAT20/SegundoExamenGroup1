@@ -12,8 +12,13 @@
     <Content Remove="wwwroot\App\Servicio\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
     <Content Remove="wwwroot\App\Cliente\Grid.ts" />
+
+    <Content Remove="wwwroot\App\Solicitud\Edit.ts" />
+    <Content Remove="wwwroot\App\Solicitud\Grid.ts" />
+
     <Content Remove="wwwroot\App\TipoCliente\Edit.ts" />
     <Content Remove="wwwroot\App\TipoCliente\Grid.ts" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -84,8 +89,13 @@
     <TypeScriptCompile Include="wwwroot\App\Servicio\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Grid.ts" />
+
+    <TypeScriptCompile Include="wwwroot\App\Solicitud\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Solicitud\Grid.ts" />
+
     <TypeScriptCompile Include="wwwroot\App\TipoCliente\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\TipoCliente\Grid.ts" />
+
     <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\axios\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.ts" />

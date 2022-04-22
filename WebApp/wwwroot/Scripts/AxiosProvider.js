@@ -11,6 +11,13 @@ var App;
             var data = _a.data;
             return data;
         }); };
+
+        AxiosProvider.SolicitudEliminar = function (id) { return axios.delete("Solicitud/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.SolicitudGuardar = function (entity) { return axios.post("Solicitud/Edit", entity).then(function (_a) {
+
         AxiosProvider.NacionalidadEliminar = function (id) { return axios.delete("Nacionalidad/Grid?handler=Eliminar&id=" + id).then(function (_a) {
             var data = _a.data;
             return data;
@@ -32,6 +39,7 @@ var App;
             return data;
         }); };
         AxiosProvider.ServicioGuardar = function (entity) { return axios.post("Servicio/Edit", entity).then(function (_a) {
+
             var data = _a.data;
             return data;
         }); };
