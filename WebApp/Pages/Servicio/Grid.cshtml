@@ -22,6 +22,7 @@
                                 <th>CostoServicio</th>
                                 <th>Estado</th>
                                 <th>CuentaContable</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +39,6 @@
                                         <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdServicio"><i class='bx bxs-edit-alt'></i></a>
                                         <button type="button" class="btn btn-secondary" onclick="ServicioGrid.OnClickEliminar(@item.IdServicio)"><i class='bx bxs-trash-alt'></i></button>
                                     </td>
-
                                 </tr>
                              }
                         </tbody>

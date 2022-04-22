@@ -1,6 +1,6 @@
 ﻿using BD;
 using Entity;
-using Entity;
+using Entity.dbo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
