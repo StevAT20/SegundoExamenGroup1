@@ -1,4 +1,5 @@
-﻿namespace ClienteEdit {
+﻿
+namespace ClienteEdit {
 
     var Entity = $("#AppEdit").data("entity")
 

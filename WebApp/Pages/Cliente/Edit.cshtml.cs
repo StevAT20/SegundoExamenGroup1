@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Entity;
 using WBL;
-using Entity.dbo;
 
 namespace WebApp.Pages.Cliente
 {

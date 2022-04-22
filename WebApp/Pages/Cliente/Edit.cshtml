@@ -17,7 +17,6 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.IdTipoIdentificacion" class="form-label">IdTipoIdentificacion</label>
-                    @*<input type="number" class="form-control" asp-for="Entity.IdTipoIdentificacion" v-model="Entity.IdTipoIdentificacion" required>*@
                     <select class="form-select" asp-for="Entity.IdTipoIdentificacion" v-model="Entity.IdTipoIdentificacion"
                             asp-items="@(new SelectList(Model.TipoClienteLista, "IdTipoCliente", "Nombre"))" required>
                     </select>
@@ -68,7 +67,6 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.Nacionalidad" class="form-label">Nacionalidad</label>
-                    @*<input type="number" class="form-control" asp-for="Entity.Nacionalidad" v-model="Entity.Nacionalidad" required>*@
                     <select class="form-select" asp-for="Entity.IdNacionalidad" v-model="Entity.IdNacionalidad"
                             asp-items="@(new SelectList(Model.NacionalidadLista, "IdNacionalidad", "Nombre"))" required>
                     </select>
