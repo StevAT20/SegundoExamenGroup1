@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[ListarServicio]
+﻿CREATE PROCEDURE [dbo].[ServicioListar]
 	AS
 	BEGIN
 	SET NOCOUNT ON
